@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+        int x=7*4;
+        int count=0;
+            if(n<=7){
+                count+=((n*(n+1))/2);
+                return count;
+            }
+            else{
+                int d = n/7;
+                count+=(d*x)+((d*(d-1)/2)*7);
+                int r = n%7;
+                count+=((d*r)+((r*(r+1))/2));
+            }
+        return count;
+    }
+};
